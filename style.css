@@ -7,12 +7,6 @@ h1 {
 h3 {
     text-align: center;
 }
-a {
-    text-decoration: none;
-}
-a.gradient-button {
-    text-decoration: none;
-}
 ul {
     text-align: center;
     margin-top: 1rem;
@@ -37,35 +31,13 @@ body {
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
     text-align: center;
 }
-/* "Enter" button */
-/*.gradient-button {
-    text-decoration: none;
-    display: inline-block;
-    color: white;
-    padding: 20px 30px;
-
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background-image: linear-gradient(to right, #cc1253 0%, #640089 51%, #561b94 100%);
-    background-size: 200% auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
-    width: 50%;
-}
-.gradient-button:hover {
-    background-position: right center;
-}
-*/
-
 .main {
     margin-top: 50px;
     max-width: 960px;
     padding: 2em;
     background-color: #fdfdff;
     border-radius: 0.5em;
-    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
+    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
 }
 #navi {
     margin-left: auto;
@@ -75,7 +47,7 @@ body {
     padding: 2em;
     background-color: #fdfdff;
     border-radius: 0.5em;
-    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
+    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -96,7 +68,7 @@ body {
     outline: none;
 }
 .textInputLabel {
-    color: #999;
+    /*color: #999;*/
     font-size: 18px;
     position: absolute;
     pointer-events: none;
@@ -141,6 +113,7 @@ body {
     width: 50%;
 }
 */
+
 /* Checkbox */
 .checkbox_item {
     text-align: center;
@@ -153,6 +126,7 @@ body {
     left: -9999px;
     opacity: 0;
 }
+/*
 .input-checkbox + label {
     position: relative;
     padding-left: 25px;
@@ -200,7 +174,7 @@ body {
     -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
 }
-
+*/
 /* Input Submit */
 .submitStyle {
     text-align: center;
