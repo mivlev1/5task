@@ -117,6 +117,7 @@ body {
     display: block;
     width: 320px;
 }
+/*
 .bar:before,
 .bar:after {
     content: '';
@@ -139,7 +140,7 @@ body {
 .textInput:focus ~ .bar:after {
     width: 50%;
 }
-
+*/
 /* Checkbox */
 .checkbox_item {
     text-align: center;
@@ -220,21 +221,8 @@ input[type='submit']:hover {
     background-position: right center;
 }
 
-/* TextArea */
-textarea {
-    display: block;
-    width: 100%;
-    padding: 0 20px;
-    margin-bottom: 10px;
-    background: #dadaff81;
-    line-height: 40px;
-    border-width: 0;
-    border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
-    resize: none;
-}
-
 /* Multiple Select */
+/*
 .selectLabel {
     margin-top: 1rem;
     font-weight: 500;
@@ -244,11 +232,9 @@ textarea {
 select {
     appearance: none;
     background-color: transparent;
-    /* border: none; */
     padding: 0 1em 0 0;
     margin: 0;
     width: 100%;
-    /* font-family: inherit; */
     font-size: inherit;
     cursor: inherit;
     line-height: inherit;
@@ -268,8 +254,9 @@ select[multiple] {
 select::-webkit-scrollbar {
     display: none;
 }
-
+*/
 /* RadioButtons */
+/*
 .rdo {
     position: relative;
     display: block;
@@ -347,3 +334,4 @@ input[type='radio']:checked + .rdo::after {
     text-decoration: underline;
     line-height: 20%;
 }
+ */
