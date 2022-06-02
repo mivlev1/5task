@@ -32,9 +32,9 @@
         <div id="user_form" class="cal-12 mx-auto">
             <?php
             if (!empty($_COOKIE[session_name()]) && !empty($_SESSION['login']))
-                print('<h3 id="form"> FORM<br/>(режим редактирования) </h3>');
+                print('<h3 id="form"> ФОРМА<br/>(режим редактирования) </h3>');
             else
-                print('<h3 id="form"> FORM </h3>');
+                print('<h3 id="form"> ФОРМА </h3>');
             ?>
             <form action="." method="POST">
 
@@ -117,7 +117,7 @@
                         <input name="contract" type="checkbox" <?php if ($errors['contract']) {
                             print 'class="error"';
                         } ?> id="check2" class="input-checkbox filled-in">
-                        <label for="check2">С контрактом ознакомлен</label>
+                        <label for="check2">С условиями ознакомлен</label>
                     </div>
                 </div>
 

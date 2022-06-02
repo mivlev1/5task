@@ -126,7 +126,7 @@ body {
     left: -9999px;
     opacity: 0;
 }
-/*
+
 .input-checkbox + label {
     position: relative;
     padding-left: 25px;
@@ -174,7 +174,7 @@ body {
     -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
 }
-*/
+
 /* Input Submit */
 .submitStyle {
     text-align: center;

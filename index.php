@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
     if ($errors['contract']) {
         setcookie('error_contract', '', 100000);
-        $messages[] = '<div ">Заполните контракт.</div>';
+        $messages[] = '<div ">Заполните условия.</div>';
     }
 
     // Складываем предыдущие значения полей в массив, если есть.
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $pass = '7439940';
         $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
-        $stmt1 = $db->prepare('SELECT name, email, bd, pol, limbs, bio FROM FORM WHERE user_id = ?');
+        $stmt1 = $db->prepare('SELECT name, email, bd, pol, limbs FROM FORM WHERE user_id = ?');
         $stmt1->execute([$_SESSION['uid']]);
         $row = $stmt1->fetch(PDO::FETCH_ASSOC);
         $values['name'] = strip_tags($row['name']);
@@ -106,7 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $values['bd'] = strip_tags($row['bd']);
         $values['pol'] = strip_tags($row['pol']);
         $values['limbs'] = strip_tags($row['limbs']);
-        $values['bio'] = strip_tags($row['bio']);
 
         $stmt2 = $db->prepare('SELECT id_sup FROM super_to_usr WHERE user_id = ?');
         $stmt2->execute([$_SESSION['uid']]);
@@ -205,8 +204,8 @@ else {
         $pass = '7439940';
         $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
-        $stmt1 = $db->prepare("UPDATE FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ?, bio = ?  WHERE user_id = ?");
-        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $_POST['bio'], $_SESSION['uid']]);
+        $stmt1 = $db->prepare("UPDATE FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ? WHERE user_id = ?");
+        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $_SESSION['uid']]);
 
         $stmt2 = $db->prepare('DELETE FROM super_to_usr WHERE user_id = ?');
         $stmt2->execute([$_SESSION['uid']]);
@@ -235,8 +234,8 @@ else {
         $db = new PDO('mysql:host=localhost; dbname=u41731', $user, $pass_db, array(PDO::ATTR_PERSISTENT => true));
 
 
-        $stmt1 = $db->prepare("INSERT INTO FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ?, bio = ?, login = ?, hash_pass = ?");
-        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $_POST['bio'], $login, $hash_pass]);
+        $stmt1 = $db->prepare("INSERT INTO FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ?, login = ?, hash_pass = ?");
+        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $login, $hash_pass]);
         $stmt2 = $db->prepare("INSERT INTO super_to_usr SET user_id = ?, id_sup = ?");
         $id = $db->lastInsertId();
         foreach ($_POST['superpowers'] as $super) $stmt2->execute([$id, $super]);
