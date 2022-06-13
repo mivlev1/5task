@@ -227,7 +227,7 @@ else {
         $hash_pass = substr(hash("sha256", $pass), 0, 20);
         // Сохраняем в Cookies.
         setcookie('login', $login);
-        setcookie('pass', $pass);
+        setcookie('pass', $hash_pass);
 
         $user = 'u41731';
         $pass_db = '7439940';
