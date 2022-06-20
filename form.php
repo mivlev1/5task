@@ -134,9 +134,9 @@
             <li>
                 <?php
                 if (!empty($_COOKIE[session_name()]) && !empty($_SESSION['login']))
-                    print('<a href="./?quit=1" class = "gradient-button" title = "Log in">Выйти</a>');
+                    print('<a href="./?quit=1" class = "gradient-button" title = "Log out">Выйти</a>');
                 else
-                    print('<a href="login.php" class = "gradient-button"  title = "Log out">Войти</a>');
+                    print('<a href="login.php" class = "gradient-button"  title = "Log in">Войти</a>');
                 ?></li>
         </ul>
     </nav>
