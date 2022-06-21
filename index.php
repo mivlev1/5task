@@ -235,8 +235,8 @@ else {
         $db = new PDO('mysql:host=localhost; dbname=u41731', $user, $pass_db, array(PDO::ATTR_PERSISTENT => true));
 
 
-        $stmt1 = $db->prepare("INSERT INTO FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ?, login = ?, passw = ?");
-        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $login, $passw]);
+        $stmt1 = $db->prepare("INSERT INTO FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ?, login = ?, hash_pass = ?");
+        $stmt1->execute([$_POST['name'], $_POST['email'], $_POST['bd'], $_POST['pol'], $_POST['limbs'], $login, $hash_pass]);
 
         $stmt2 = $db->prepare("INSERT INTO super_to_usr SET user_id = ?, id_sup = ?");
         $id = $db->lastInsertId();
