@@ -202,6 +202,7 @@ else {
         // кроме логина и пароля.
         $user = 'u41731';
         $pass = '7439940';
+
         $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
         $stmt1 = $db->prepare("UPDATE FORM SET name = ?, email = ?, bd = ?, pol= ? , kon = ? WHERE user_id = ?");
@@ -219,12 +220,12 @@ else {
         $id = uniqid();
         $hash = md5($id);
         $login = substr($hash, 0, 10);
-        $pass = substr($hash, 10, 15);
+        $passw = substr($hash, 10, 15);
         /*SHA-2 (Secure Hash Algorithm Version 2 — безопасный алгоритм хеширования, версия 2) —
           это название однонаправленных хеш-функций SHA-224, SHA-256, SHA-384 и SHA-512.
           Хеш-функции предназначены для создания «отпечатков» или «дайджестов» сообщений произвольной битовой длины.
           Применяются в различных приложениях или компонентах, связанных с защитой информации.*/
-        $hash_pass = substr(hash("sha256", $pass), 0, 20);
+        $hash_pass = substr(hash("sha256", $passw), 0, 20);
         // Сохраняем в Cookies.
         setcookie('login', $login);
         setcookie('pass', $hash_pass);
@@ -241,7 +242,7 @@ else {
         $id = $db->lastInsertId();
         foreach ($_POST['superpowers'] as $super) $stmt2->execute([$id, $super]);
     }
-    // Сохраняем куку с признаком успешного сохранения.
+    // Сохраняем куки с признаком успешного сохранения.
     setcookie('save', '1');
     // Делаем перенаправление.
     header('Location: ./');
